@@ -24,16 +24,16 @@ export function Header() {
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Начало
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               За нас
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <a href="/learn-more/dances" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Танци
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <a href="/learn-more/schedule" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Разписание
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <a href="/learn-more/gallery" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Галерия
             </a>
           </nav>
@@ -62,16 +62,16 @@ export function Header() {
               <a href="#" className="text-foreground hover:text-primary transition-colors font-medium py-2">
                 Начало
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors font-medium py-2">
+              <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium py-2">
                 За нас
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors font-medium py-2">
+              <a href="/learn-more/dances" className="text-foreground hover:text-primary transition-colors font-medium py-2">
                 Танци
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors font-medium py-2">
+              <a href="/learn-more/schedule" className="text-foreground hover:text-primary transition-colors font-medium py-2">
                 Разписание
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors font-medium py-2">
+              <a href="/learn-more/gallery" className="text-foreground hover:text-primary transition-colors font-medium py-2">
                 Галерия
               </a>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm mt-2">

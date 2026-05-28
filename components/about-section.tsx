@@ -1,6 +1,10 @@
+import Link from "next/link";
+import { KanaticaBorder } from "@/components/kanatica-border";
+
 export function AboutSection() {
   return (
-    <section className="py-24 bg-card">
+    <section id="about" className="relative overflow-hidden py-24 bg-card">
+      <KanaticaBorder />
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center justify-center gap-4 mb-12">
@@ -15,15 +19,13 @@ export function AboutSection() {
           </h3>
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 text-pretty">
-            Нашата школа е място, където българският фолклор оживява. От 1998 година насам, 
-            ние обучаваме млади и стари в изкуството на автентичния български танц. 
-            Нашите хореографи са носители на традицията, предавана от поколение на поколение.
+            Нашата школа е място, където българският фолклор оживява. С дългогодишен опит в обучението на млади и стари, ние пазим изкуството на автентичния български танц живо и достъпно за всички. Нашите хореографи са носители на традицията, предавана от поколение на поколение.
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
             Предлагаме занятия за всички възрасти и нива на подготовка — от начинаещи до напреднали. 
             При нас ще откриете топлина, общност и страст към българската култура.
-          </p>
+          </p>  
         </div>
 
         {/* Features */}
@@ -32,6 +34,7 @@ export function AboutSection() {
             {
               title: "Автентични танци",
               description: "Хора, ръченици и регионални танци от всички краища на България.",
+              href: "/learn-more/dances",
               icon: (
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10" />
@@ -42,6 +45,7 @@ export function AboutSection() {
             {
               title: "Опитни хореографи",
               description: "Професионалисти с дългогодишен сценичен и преподавателски опит.",
+              href: "/learn-more/instructors",
               icon: (
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -54,6 +58,7 @@ export function AboutSection() {
             {
               title: "Топла общност",
               description: "Присъединете се към семейство от единомишленици, влюбени в фолклора.",
+              href: "/learn-more/contact",
               icon: (
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -61,16 +66,17 @@ export function AboutSection() {
               ),
             },
           ].map((feature, index) => (
-            <div 
-              key={index} 
-              className="text-center p-8 bg-background rounded-sm border border-border hover:border-primary transition-colors"
+            <Link
+              key={index}
+              href={feature.href}
+              className="text-center p-8 bg-background rounded-sm border border-border hover:border-primary transition-colors block"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
                 {feature.icon}
               </div>
               <h4 className="text-xl font-bold text-foreground mb-3">{feature.title}</h4>
               <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
