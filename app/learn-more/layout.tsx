@@ -65,11 +65,12 @@ export default function LearnMoreLayout({
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
+    <>
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
+      {/* Sidebar — desktop only */}
       <aside
         className={cn(
-          "sticky top-0 h-screen bg-card border-r border-border transition-all duration-300 flex flex-col",
+          "sticky top-0 h-screen bg-card border-r border-border transition-all duration-300 flex-col hidden md:flex",
           isCollapsed ? "w-20" : "w-72"
         )}
       >
@@ -85,7 +86,7 @@ export default function LearnMoreLayout({
                 <h2 className="font-bold text-foreground text-lg leading-tight">
                   Фолклорна Школа
                 </h2>
-                <p className="text-xs text-muted-foreground">Традиция и танц</p>
+                <p className="text-sm text-muted-foreground">Традиция и танц</p>
               </div>
             )}
           </Link>
@@ -149,7 +150,7 @@ export default function LearnMoreLayout({
                     <span className="font-semibold block">{item.title}</span>
                     <span
                       className={cn(
-                        "text-xs",
+                        "text-sm",
                         isActive
                           ? "text-primary-foreground/80"
                           : "text-muted-foreground"
@@ -210,9 +211,33 @@ export default function LearnMoreLayout({
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 min-h-screen">
+      <main className="flex-1 min-h-screen pb-20 md:pb-0">
         <PageTransition>{children}</PageTransition>
       </main>
     </div>
+
+    {/* Mobile bottom tab bar — outside the flex container to guarantee fixed positioning */}
+    <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-card border-t border-border">
+      <div className="flex justify-around items-center py-2">
+        {menuItems.map((item) => {
+          const isActive = pathname === item.href;
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg transition-colors",
+                isActive ? "text-primary" : "text-muted-foreground"
+              )}
+            >
+              <Icon className={cn("w-5 h-5", isActive && "stroke-[2.5]")} />
+              <span className="text-[10px] font-medium">{item.title}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
+    </>
   );
 }

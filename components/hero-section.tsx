@@ -34,12 +34,12 @@ export function HeroSection() {
           <span className="w-16 h-[2px] bg-accent" />
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 tracking-tight text-balance">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 tracking-tight text-balance">
           <span className="block">ХОРИ́ЩЕ</span>
-          <span className="block text-primary text-3xl md:text-5xl lg:text-6xl">Ранджеви</span>
+          <span className="block text-primary text-2xl sm:text-3xl md:text-5xl lg:text-6xl">Ранджеви</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
+        <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
           Потопете се в магията на българската традиция. Научете автентични хора и ръченици от опитни хореографи.
         </p>
 

@@ -142,30 +142,30 @@ export default function SchedulePage() {
                     {day.sessions.map((session, sessionIndex) => (
                       <div
                         key={sessionIndex}
-                        className="flex items-center justify-between p-4 hover:bg-secondary/50 transition-colors"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 gap-3 hover:bg-secondary/50 transition-colors"
                       >
                         <div className="flex items-center gap-4">
-                          <div className="w-20 text-center">
+                          <div className="w-20 text-center flex-shrink-0">
                             <p className="text-sm font-semibold text-primary">
                               {session.time.split(" - ")[0]}
                             </p>
-                            <p className="text-xs text-muted-foreground">
+                            <p className="text-sm text-muted-foreground">
                               {session.time.split(" - ")[1]}
                             </p>
                           </div>
-                          <div className="h-10 w-px bg-border" />
+                          <div className="h-10 w-px bg-border flex-shrink-0" />
                           <div>
                             <h4 className="font-semibold text-foreground">{session.group}</h4>
                             <p className="text-sm text-muted-foreground">{session.level}</p>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 pl-24 sm:pl-0">
                           {session.spots > 0 ? (
                             <>
                               <span className="text-sm text-muted-foreground">
                                 {session.spots} свободни места
                               </span>
-                              <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                              <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-pointer">
                                 Запиши се
                               </Button>
                             </>
@@ -197,7 +197,7 @@ export default function SchedulePage() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-primary rounded-lg p-3 text-center min-w-[60px]">
-                      <p className="text-xs text-primary-foreground/80">
+                      <p className="text-sm text-primary-foreground/80">
                         {event.date.split(" ")[1]}
                       </p>
                       <p className="text-2xl font-bold text-primary-foreground">

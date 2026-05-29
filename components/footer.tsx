@@ -6,8 +6,8 @@ export function Footer() {
       {/* Top decorative border */}
       <div className="h-1 bg-accent" />
       
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
@@ -17,7 +17,7 @@ export function Footer() {
               Съхраняваме българската традиция чрез танц от 1998 година.
             </p>
             {/* Social icons */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               <a 
                 href="#" 
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors"

@@ -214,7 +214,7 @@ export default function DancesPage() {
                   )}
                   <div>
                     <h4 className="font-semibold text-foreground">{dance.name}</h4>
-                    <p className="text-xs text-muted-foreground">{dance.region}</p>
+                    <p className="text-sm text-muted-foreground">{dance.region}</p>
                   </div>
                 </div>
                 <span

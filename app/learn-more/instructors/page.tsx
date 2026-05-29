@@ -134,13 +134,13 @@ export default function InstructorsPage() {
                   <div className="p-6">
                     <p className="text-muted-foreground text-sm mb-4">{instructor.bio}</p>
                     <div className="border-t border-border pt-4">
-                      <p className="text-xs font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <p className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
                         <Award className="w-4 h-4 text-accent" />
                         Постижения
                       </p>
                       <ul className="space-y-1">
                         {instructor.achievements.map((achievement, i) => (
-                          <li key={i} className="text-xs text-muted-foreground flex items-center gap-2">
+                          <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
                             <Star className="w-3 h-3 text-accent fill-accent" />
                             {achievement}
                           </li>

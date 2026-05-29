@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="bg" className="bg-background">
-      <body className={`${cormorant.variable} font-sans antialiased`}>
+      <body className={`${cormorant.variable} font-sans`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

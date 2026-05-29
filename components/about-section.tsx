@@ -3,7 +3,7 @@ import { KanaticaBorder } from "@/components/kanatica-border";
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative overflow-hidden py-24 bg-card">
+    <section id="about" className="relative overflow-hidden py-16 md:py-24 bg-card">
       <KanaticaBorder />
       <div className="container mx-auto px-6">
         {/* Section header */}
@@ -14,7 +14,7 @@ export function AboutSection() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-8 text-balance">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 text-balance">
             Съхраняваме традицията, танцуваме с душа
           </h3>
           

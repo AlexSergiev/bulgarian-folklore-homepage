@@ -76,7 +76,7 @@ export default function GalleryPage() {
 
         {/* Photo Grid */}
         <section className="mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {filtered.map((item) => (
               <div
                 key={item.id}

@@ -190,7 +190,7 @@ export default function ContactPage() {
                         <CardContent className="p-5 text-center">
                           <Icon className="w-8 h-8 text-primary mx-auto mb-2" />
                           <p className="font-semibold text-foreground text-sm">{social.name}</p>
-                          <p className="text-xs text-muted-foreground">{social.followers} последователи</p>
+                          <p className="text-sm text-muted-foreground">{social.followers} последователи</p>
                         </CardContent>
                       </Card>
                     </a>
