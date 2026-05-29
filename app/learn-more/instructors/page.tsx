@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Award, Music, Heart, Star, Mail, Calendar } from "lucide-react";
+import { Users, Award, Music, Heart, Star, Calendar } from "lucide-react";
 
 const instructors = [
   {
@@ -185,17 +185,16 @@ export default function InstructorsPage() {
             Елате на безплатен пробен урок и се убедете сами в качеството на нашето преподаване.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 cursor-pointer">
               <Calendar className="mr-2 w-5 h-5" />
-              Запази пробен урок
+              Запишете се сега
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary cursor-pointer"
             >
-              <Mail className="mr-2 w-5 h-5" />
-              Свържи се с нас
+              Научете повече
             </Button>
           </div>
         </section>

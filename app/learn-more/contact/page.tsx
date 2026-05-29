@@ -140,7 +140,7 @@ export default function ContactPage() {
                       rows={5}
                     />
                   </div>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
                     <Send className="mr-2 w-4 h-4" />
                     Изпрати съобщение
                   </Button>
@@ -209,17 +209,26 @@ export default function ContactPage() {
           </div>
 
           <Card className="border-border bg-card overflow-hidden">
-            <div className="bg-secondary h-64 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-primary mx-auto mb-3" />
-                <p className="text-foreground font-semibold">ул. Народна 15, София 1000</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  В близост до метростанция Сердика
-                </p>
-                <Button variant="outline" className="mt-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Отвори в Google Maps
-                </Button>
-              </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14468.58400954492!2d23.36343579345595!3d42.67321106050847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa85c36aeb4979%3A0xe788c5d9fc779e82!2sElektronika%20Ad!5e1!3m2!1sen!2sbg!4v1780040244996!5m2!1sen!2sbg"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Местоположение на залата"
+            />
+            <div className="p-4 flex items-center gap-3">
+              <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
+              <a
+                href="https://maps.app.goo.gl/9YXLs5ypHW256RSd6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Отвори в Google Maps
+              </a>
             </div>
           </Card>
         </section>
@@ -234,7 +243,7 @@ export default function ContactPage() {
             безплатен пробен урок!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
               <Phone className="mr-2 w-5 h-5" />
               Обадете се сега
             </Button>

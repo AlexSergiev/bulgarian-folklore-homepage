@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PageTransition } from "@/components/page-transition";
 
 const menuItems = [
   {
@@ -99,7 +100,7 @@ export default function LearnMoreLayout({
 
         {/* Navigation */}
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
-          {menuItems.map((item) => {
+          {menuItems.map((item, index) => {
             const isActive = pathname === item.href;
             const Icon = item.icon;
 
@@ -107,8 +108,14 @@ export default function LearnMoreLayout({
               <Link
                 key={item.href}
                 href={item.href}
+                style={{
+                  animationDelay: `${index * 80}ms`,
+                  animationFillMode: "both",
+                }}
                 className={cn(
-                  "group flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 relative",
+                  "group flex items-center gap-3 py-3 rounded-lg transition-all duration-300 relative",
+                  "animate-in fade-in slide-in-from-left-4",
+                  isCollapsed ? "justify-center px-0" : "px-3",
                   isActive
                     ? "bg-primary text-primary-foreground shadow-md"
                     : "hover:bg-secondary text-foreground"
@@ -188,7 +195,7 @@ export default function LearnMoreLayout({
         <div className="p-3 border-t border-border">
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-colors cursor-pointer"
           >
             {isCollapsed ? (
               <ChevronRight className="w-5 h-5" />
@@ -203,7 +210,9 @@ export default function LearnMoreLayout({
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 min-h-screen">{children}</main>
+      <main className="flex-1 min-h-screen">
+        <PageTransition>{children}</PageTransition>
+      </main>
     </div>
   );
 }

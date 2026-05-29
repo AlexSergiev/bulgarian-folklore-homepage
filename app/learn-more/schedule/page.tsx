@@ -231,7 +231,7 @@ export default function SchedulePage() {
             Първото пробно занятие е напълно безплатно! Елате и се убедете сами в качеството на нашите уроци.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 cursor-pointer">
               <ChevronRight className="mr-2 w-5 h-5" />
               Резервирай безплатен урок
             </Button>

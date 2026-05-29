@@ -40,7 +40,7 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-sm cursor-pointer">
               Свържете се
             </Button>
           </div>

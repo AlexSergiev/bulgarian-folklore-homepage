@@ -86,14 +86,16 @@ export default function DancesPage() {
       <div className="relative bg-gradient-to-br from-primary to-primary/80 py-16 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            {[...Array(20)].map((_, i) => (
+            {[
+              [12, 88], [30, 71], [0, 30], [29, 41], [11, 4],
+              [46, 90], [16, 70], [68, 93], [84, 11], [45, 70],
+              [60, 39], [89, 77], [67, 93], [92, 35], [92, 28],
+              [77, 27], [33, 64], [71, 52], [82, 64], [78, 50],
+            ].map(([top, left], i) => (
               <div
                 key={i}
                 className="absolute w-2 h-2 bg-primary-foreground rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
+                style={{ top: `${top}%`, left: `${left}%` }}
               />
             ))}
           </div>
@@ -240,7 +242,7 @@ export default function DancesPage() {
             Изберете танц и се запишете за безплатно пробно занятие. Нашите инструктори 
             ще ви помогнат да изберете подходящото ниво.
           </p>
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
             Запишете се за пробен урок
           </Button>
         </section>

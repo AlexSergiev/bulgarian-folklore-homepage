@@ -1,10 +1,20 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { KanaticaBorder } from "@/components/kanatica-border";
 
 export function HeroSection() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    router.push("/learn-more");
+  };
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Decorative folk pattern border */}
@@ -37,10 +47,18 @@ export function HeroSection() {
         <div className="flex justify-center">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold rounded-sm"
-            asChild
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-6 text-lg font-semibold rounded-sm min-w-[200px] cursor-pointer"
+            onClick={handleClick}
+            disabled={loading}
           >
-            <Link href="/learn-more">Научете повече</Link>
+            {loading ? (
+              <span className="flex items-center gap-2">
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Зареждане...
+              </span>
+            ) : (
+              "Научете повече"
+            )}
           </Button>
         </div>
       </div>
